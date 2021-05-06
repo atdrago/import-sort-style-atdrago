@@ -1,4 +1,4 @@
-import { IStyleAPI, IStyleItem } from 'import-sort-style';
+import { IMatcherFunction, IStyleAPI, IStyleItem } from 'import-sort-style';
 
 export default function (styleApi: IStyleAPI): IStyleItem[] {
   const {
@@ -15,6 +15,16 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
     unicode,
   } = styleApi;
 
+  /**
+   * Checks whether the import is a built-in Node module, but ignores the
+   * deprecated 'constants' modules
+   */
+  const isNodeModuleAndNotConstants: IMatcherFunction = (imported) => {
+    return (
+      !imported.moduleName.startsWith('constants') && isNodeModule(imported)
+    );
+  };
+
   return [
     // import 'foo';
     {
@@ -26,7 +36,7 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
 
     // import path from 'path';
     {
-      match: isNodeModule,
+      match: isNodeModuleAndNotConstants,
       sort: moduleName(unicode),
       sortNamedMembers: alias(unicode),
     },
