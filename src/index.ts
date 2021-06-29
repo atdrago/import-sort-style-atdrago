@@ -12,6 +12,7 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
     isRelativeModule,
     moduleName,
     not,
+    or,
     unicode,
   } = styleApi;
 
@@ -23,6 +24,14 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
     return (
       !imported.moduleName.startsWith('constants') && isNodeModule(imported)
     );
+  };
+
+  /**
+   * Checks whether the import is only dots and slashes. In this case, in Node,
+   * we would be importing an index file, which belongs in relative imports.
+   */
+  const isIndexImport: IMatcherFunction = (imported) => {
+    return /^[\.\/]+$/.test(imported.moduleName);
   };
 
   return [
@@ -44,7 +53,7 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
 
     // import React, { useEffect } from 'react';
     {
-      match: isInstalledModule(__filename),
+      match: and(isInstalledModule(__filename), not(isIndexImport)),
       sort: moduleName(unicode),
       sortNamedMembers: alias(unicode),
     },
@@ -52,7 +61,11 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
 
     // import { isPhoneValid } from 'utils/isPhoneValid'
     {
-      match: and(isAbsoluteModule, not(isInstalledModule(__filename))),
+      match: and(
+        isAbsoluteModule,
+        not(isInstalledModule(__filename)),
+        not(isIndexImport),
+      ),
       sort: moduleName(unicode),
       sortNamedMembers: alias(unicode),
     },
@@ -60,7 +73,7 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
 
     // import { Heading } from "./styles"
     {
-      match: isRelativeModule,
+      match: or(isRelativeModule, isIndexImport),
       sort: [dotSegmentCount, moduleName(unicode)],
       sortNamedMembers: alias(unicode),
     },
