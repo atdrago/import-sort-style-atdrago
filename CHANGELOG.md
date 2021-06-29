@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/atdrago/import-sort-style-atdrago/compare/v0.1.2...v0.1.3) (2021-06-29)
+
+
+### Bug Fixes
+
+* Group index file imports with relative modules ([3efc41a](https://github.com/atdrago/import-sort-style-atdrago/commit/3efc41acf2015fcd5a5ff637560d42dea04de862))
+
 ### [0.1.2](https://github.com/atdrago/import-sort-style-atdrago/compare/v0.1.1...v0.1.2) (2021-05-06)
 
 
