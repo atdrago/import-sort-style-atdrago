@@ -34,6 +34,29 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
     return /^[\.\/]+$/.test(imported.moduleName);
   };
 
+  /**
+   * Checks whether the module is installed (e.g.,
+   * 'react-markdown/lib/complex-types'). But also checks whether it exists with
+   * a `.ts` or `.tsx` extension, e.g., 'react-markdown/lib/complex-types.ts' or
+   * 'react-markdown/lib/complex-types.tsx'.
+   */
+  const isInstalledOrTsOrTsxModule: IMatcherFunction = (imported) => {
+    const importedWithTs = {
+      ...imported,
+      moduleName: `${imported.moduleName}.ts`,
+    };
+    const importedWithTsx = {
+      ...imported,
+      moduleName: `${imported.moduleName}.tsx`,
+    };
+
+    return (
+      isInstalledModule(__filename)(imported) ||
+      isInstalledModule(__filename)(importedWithTs) ||
+      isInstalledModule(__filename)(importedWithTsx)
+    );
+  };
+
   return [
     // import 'foo';
     {
@@ -53,7 +76,7 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
 
     // import React, { useEffect } from 'react';
     {
-      match: and(isInstalledModule(__filename), not(isIndexImport)),
+      match: and(isInstalledOrTsOrTsxModule, not(isIndexImport)),
       sort: moduleName(unicode),
       sortNamedMembers: alias(unicode),
     },
@@ -63,7 +86,7 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
     {
       match: and(
         isAbsoluteModule,
-        not(isInstalledModule(__filename)),
+        not(isInstalledOrTsOrTsxModule),
         not(isIndexImport),
       ),
       sort: moduleName(unicode),
