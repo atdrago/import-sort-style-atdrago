@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/atdrago/import-sort-style-atdrago/compare/v0.1.3...v0.1.4) (2021-08-27)
+
+
+### Bug Fixes
+
+* TS files in subdirectories of installed modules are grouped with absolute modules ([1e3ea01](https://github.com/atdrago/import-sort-style-atdrago/commit/1e3ea016b563796a57b218a19fe7aaba3095f9f9))
+
 ### [0.1.3](https://github.com/atdrago/import-sort-style-atdrago/compare/v0.1.2...v0.1.3) (2021-06-29)
 
 
