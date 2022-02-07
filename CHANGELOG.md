@@ -4,35 +4,30 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.1.5](https://github.com/atdrago/import-sort-style-atdrago/compare/v0.1.4...v0.1.5) (2022-02-07)
 
-
 ### Bug Fixes
 
-* Try to identify unbuilt installed modules ([196fb5e](https://github.com/atdrago/import-sort-style-atdrago/commit/196fb5e23f8fe7dca05b1e72143f586fa1d4008a))
+- Try to identify unbuilt installed modules ([196fb5e](https://github.com/atdrago/import-sort-style-atdrago/commit/196fb5e23f8fe7dca05b1e72143f586fa1d4008a))
 
 ### [0.1.4](https://github.com/atdrago/import-sort-style-atdrago/compare/v0.1.3...v0.1.4) (2021-08-27)
 
-
 ### Bug Fixes
 
-* TS files in subdirectories of installed modules are grouped with absolute modules ([1e3ea01](https://github.com/atdrago/import-sort-style-atdrago/commit/1e3ea016b563796a57b218a19fe7aaba3095f9f9))
+- TS files in subdirectories of installed modules are grouped with absolute modules ([1e3ea01](https://github.com/atdrago/import-sort-style-atdrago/commit/1e3ea016b563796a57b218a19fe7aaba3095f9f9))
 
 ### [0.1.3](https://github.com/atdrago/import-sort-style-atdrago/compare/v0.1.2...v0.1.3) (2021-06-29)
 
-
 ### Bug Fixes
 
-* Group index file imports with relative modules ([3efc41a](https://github.com/atdrago/import-sort-style-atdrago/commit/3efc41acf2015fcd5a5ff637560d42dea04de862))
+- Group index file imports with relative modules ([3efc41a](https://github.com/atdrago/import-sort-style-atdrago/commit/3efc41acf2015fcd5a5ff637560d42dea04de862))
 
 ### [0.1.2](https://github.com/atdrago/import-sort-style-atdrago/compare/v0.1.1...v0.1.2) (2021-05-06)
 
-
 ### Bug Fixes
 
-* Ignore deprecated constants Node module in isNodeModule check ([a1b57f8](https://github.com/atdrago/import-sort-style-atdrago/commit/a1b57f86fe94a15819ff6771270789bc6dd5466f))
+- Ignore deprecated constants Node module in isNodeModule check ([a1b57f8](https://github.com/atdrago/import-sort-style-atdrago/commit/a1b57f86fe94a15819ff6771270789bc6dd5466f))
 
 ### 0.1.1 (2021-05-03)
 
-
 ### Features
 
-* Add initial rules and project setup ([27091b1](https://github.com/atdrago/import-sort-style-atdrago/commit/27091b1c82028af859998da582c118e10dbed129))
+- Add initial rules and project setup ([27091b1](https://github.com/atdrago/import-sort-style-atdrago/commit/27091b1c82028af859998da582c118e10dbed129))
