@@ -15,6 +15,7 @@ import ReactMarkdown from 'react-markdown';
 import configureMongoose from './configureMongoose';
 import configureKafka from './configureKafka';
 import configureLogging from './configureLogging';
+import testPackage from '@atdrago/test-package';
 
 import foo from '../foo';
 import index from './';
@@ -36,6 +37,7 @@ const sortedCode = `import 'some-module-with-side-effects';
 import { Server } from 'http';
 import path from 'path';
 
+import testPackage from '@atdrago/test-package';
 import ajv from 'ajv';
 import ReactMarkdown from 'react-markdown';
 import { ReactMarkdownProps } from 'react-markdown/lib/complex-types';
