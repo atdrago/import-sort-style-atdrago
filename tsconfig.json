@@ -8,7 +8,6 @@
     "rootDir": "src",
     "strictNullChecks": true,
     "target": "es6",
-    "types": ["node"],
     "lib": ["esnext"]
   },
   "include": ["src"]
