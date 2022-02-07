@@ -31,7 +31,7 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
    * we would be importing an index file, which belongs in relative imports.
    */
   const isIndexImport: IMatcherFunction = (imported) => {
-    return /^[\.\/]+$/.test(imported.moduleName);
+    return /^[./]+$/.test(imported.moduleName);
   };
 
   /**
