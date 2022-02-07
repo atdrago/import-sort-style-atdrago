@@ -50,8 +50,14 @@ export default function (styleApi: IStyleAPI): IStyleItem[] {
       moduleName: `${imported.moduleName}.tsx`,
     };
 
+    // In some cases, the module may not be built, and might only exist as a
+    // file with a `.ts` extension (not `.js`). Try to handle these cases by
+    // searching for a `.ts` file with the same name.
+    const __filenameWithTs = __filename.replace(/\.js$/, '.ts');
+
     return (
       isInstalledModule(__filename)(imported) ||
+      isInstalledModule(__filenameWithTs)(imported) ||
       isInstalledModule(__filename)(importedWithTs) ||
       isInstalledModule(__filename)(importedWithTsx)
     );
