@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/atdrago/import-sort-style-atdrago/compare/v0.1.6...v0.1.7) (2022-02-07)
+
+
+### Reverts
+
+* "fix: Try to identify unbuilt installed modules" ([4d47698](https://github.com/atdrago/import-sort-style-atdrago/commit/4d4769874d8195c0341a1784a500f6176a2a36a1))
+
+
+### Chores
+
+* Fix eslint issue in tests ([b06fb25](https://github.com/atdrago/import-sort-style-atdrago/commit/b06fb258f2fd18000adbc4517f852172be1864a5))
+
 ### [0.1.6](https://github.com/atdrago/import-sort-style-atdrago/compare/v0.1.5...v0.1.6) (2022-02-07)
 
 
